@@ -1,21 +1,29 @@
 {
   "development": {
     "username": "root",
-    "password": "Bike4life!",
+    "password": "Decoded13!",
     "database": "projectQuiz",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Bike4life!",
+=======
+    "password": "Decoded13!",
+>>>>>>> master
     "database": "projectQuiz",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Bike4life!",
+=======
+    "password": "Decoded13!",
+>>>>>>> master
     "database": "projectQuiz",
     "host": "127.0.0.1",
     "dialect": "mysql"
