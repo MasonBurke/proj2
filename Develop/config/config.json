@@ -1,26 +1,23 @@
 {
   "development": {
-    "username": "fgull4msovhjmpjh",
-    "password": "pyevpqsko7yneh18",
-    "database": "ru9ziq94o1q7brv1",
-    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "username": "root",
+    "password": "Bike4life!",
+    "database": "projectQuiz",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "test": {
-    "username": "fgull4msovhjmpjh",
-    "password": "pyevpqsko7yneh18",
-    "database": "ru9ziq94o1q7brv1",
-    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "production": {
-    "username": "fgull4msovhjmpjh",
-    "password": "pyevpqsko7yneh18",
-    "database": "ru9ziq94o1q7brv1",
-    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
