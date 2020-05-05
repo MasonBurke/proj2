@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "Sioncala1!",
-=======
-    "password": "Decoded13!",
->>>>>>> b6ebea2b5bd13819fff2a62522e182eb57c4b042
     "database": "projectQuiz",
     "host": "127.0.0.1",
     "dialect": "mysql"
