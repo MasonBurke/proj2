@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Sioncala1!",
+    "database": "projectQuiz",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
