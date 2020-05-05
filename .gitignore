@@ -1,3 +1,4 @@
 node_modules
 .env
-# look into .env for hiding the api keys ect^^^^^^^^^^^^^^
+.DS_Store
+# look into hiding the api keys with ^^^^^^^
