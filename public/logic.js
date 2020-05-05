@@ -8,7 +8,10 @@ var newSession = {
       score: 0 
 
 }
-var currentScore = $("<div>").val(newSession.score)
+var currentScore = $("<div>").val(newSession.score);
+var categorySelected = $("#scienceCat");
+var userNameInput = $("#user");
+
 
 var scienceQuestions = {
     
@@ -27,11 +30,12 @@ var scienceQuestions = {
 
 }
 $("#startQuiz").on("click", function() {
-            
-            newSession.userName = $(".nameInput").val();
-            newSession.category = $(".categorySelected").val();
+      
+            newSession.userName = userNameInput.val();
+            newSession.category = categorySelected.val();
+            console.log(newSession.userName);
             startQuiz(newSession.category);
-            console.log("Quiz Started" + newSession.category);
+            
             
       })
 
