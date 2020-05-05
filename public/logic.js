@@ -27,10 +27,11 @@ var scienceQuestions = {
 
 }
 $("#startQuiz").on("click", function() {
-            console.log("Quiz Started");
-            newSession.userName = $(".nameInput").val().trim();
+            
+            newSession.userName = $(".nameInput").val();
             newSession.category = $(".categorySelected").val();
             startQuiz(newSession.category);
+            console.log("Quiz Started" + newSession.category);
             
       })
 
