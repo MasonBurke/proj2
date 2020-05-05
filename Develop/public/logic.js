@@ -1,5 +1,7 @@
 //adding this file to make sure that github is linked
 
+import { readdir } from "fs";
+
 
 var newSession = {
       userName: "",
@@ -10,18 +12,19 @@ var newSession = {
 var currentScore = $("<div>").val(newSession.score)
 
 
-
-$(function() {
-      $(".startQuiz").on("click", function() {
+$(".startQuiz").on("click", function() {
             newSession.userName = $(".nameInput").val().trim();
             newSession.category = $(".categorySelected").val();
+            window.location.href="/questions.html"
+            
+
 
             
       })
-});
 
+function startQuiz (category) {
+      
 
-function startQuiz () {
       
 
 
