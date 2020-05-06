@@ -19,9 +19,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-// var routes = require("./controllers/questions_controller");
+var routes = require("./controllers/questions_controller");
 
-// app.use(routes);
+app.use(routes);
 
 
 require("./routes/score-api-routes")(app)
