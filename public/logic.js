@@ -55,14 +55,15 @@ function startQuiz (category) {
 }
 
 function scienceQuiz (){
-      var quizBanner = $("#categoryBanner");
-      quizBanner.text(newSession.category);
+
       
       firstQuestion();
 
       function firstQuestion() {
+
             
             console.log("first science question triggered")
+            userNameInput.hide()
             
             
             var divQuestion = $("<p>").text(scienceQuestions.questions.q1);
@@ -70,6 +71,7 @@ function scienceQuiz (){
             var divAnswer2 = $("<div>").text(scienceQuestions.options.q1[1]);
             var divAnswer3 = $("<div>").text(scienceQuestions.options.q1[2]);
             var divAnswer4 = $("<div>").text(scienceQuestions.options.q1[3]);
+
 
            
             // this is where I will append the proper elements with the variables above. 
