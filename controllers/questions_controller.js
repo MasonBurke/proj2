@@ -21,6 +21,9 @@ router.delete("/api/questions/:id", function(req, res) {
     //ya know... put the delete stuff here if we need it
     //not quick maths tbh
 })
+router.get("/questions", function (req,res) {
+    res.render("questions");
+})
 
 
 
