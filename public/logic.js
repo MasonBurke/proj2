@@ -266,7 +266,7 @@ function secondScienceQuestion() {
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     location.reload();
                     // Reload the page to get the updated list
                     
@@ -282,7 +282,7 @@ function secondScienceQuestion() {
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     // Reload the page to get the updated list
                     location.reload();
                   });
@@ -295,7 +295,7 @@ function secondScienceQuestion() {
                   data: newSession
                       }).then(
                    function() {
-                        console.log("created new quizSession");
+                        
                           // Reload the page to get the updated list
                           location.reload();
                         }
@@ -310,7 +310,7 @@ function secondScienceQuestion() {
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     // Reload the page to get the updated list
                     location.reload();
                   });
@@ -490,7 +490,7 @@ function cultureQuiz (){
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     // Reload the page to get the updated list
                     location.reload();
                   });
@@ -503,7 +503,7 @@ function cultureQuiz (){
                   data: newSession
                       }).then(
                    function() {
-                        console.log("created new quizSession");
+                        
                           // Reload the page to get the updated list
                           location.reload();
                         }
@@ -518,7 +518,7 @@ function cultureQuiz (){
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     // Reload the page to get the updated list
                     location.reload();
                   });
@@ -666,6 +666,7 @@ function secondArtQuestion() {
       
       
       
+      
       divQuestion.text(artQuestions.questions.q4);
       divAnswer1.text(artQuestions.answers.q4[0]);
       divAnswer2.text(artQuestions.answers.q4[1]);
@@ -682,8 +683,18 @@ function secondArtQuestion() {
             newSession.score = newSession.score + 100;
             $(".content").empty();
             $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    // Reload the page to get the updated list
+                    location.reload()
+                  });
 
-            location.reload();
+
+
+            
       })
       divAnswer1.on("click", function () {
             $(".content").empty();
@@ -693,7 +704,7 @@ function secondArtQuestion() {
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     // Reload the page to get the updated list
                     location.reload();
                   });
@@ -706,7 +717,7 @@ function secondArtQuestion() {
                   data: newSession
                       }).then(
                    function() {
-                        console.log("created new quizSession");
+                        
                           // Reload the page to get the updated list
                           location.reload();
                         }
@@ -721,7 +732,7 @@ function secondArtQuestion() {
                   data: newSession
                 }).then(
                   function() {
-                    console.log("created new quizSession");
+                    
                     // Reload the page to get the updated list
                     location.reload();
                   });
