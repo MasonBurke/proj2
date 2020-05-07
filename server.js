@@ -24,12 +24,8 @@ var routes = require("./controllers/questions_controller");
 app.use(routes);
 
 
-require("./routes/score-api-routes")(app)
-
-db.sequelize.sync().then(function(){
-  // Start our server so that it can begin listening to client requests.
-  app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
-})
+// Start our server so that it can begin listening to client requests.
+app.listen(PORT, function() {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
+});
