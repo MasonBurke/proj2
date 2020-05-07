@@ -745,10 +745,7 @@ function secondArtQuestion() {
 
 console.log(newSession.score);
 
-
 const getScores = () => {
-
-
       $.get("/api/scores" , function(data) {
             console.log("Scores:", data);
             if(!data) {
@@ -771,22 +768,7 @@ const getScores = () => {
                   for (const score of culture) {
                         $("#cultureScore").append(`<p>name: ${score.userName} | Score: ${score.score} | Date: ${score.createdAt}</p>`)
                   }
-
-
-                  /// have something here to narrow the search response (science, art,culture)
-                  //then send that data through initializeTable
-
-                  //create new function for getScience/Art/Culture
-                  initializeTable(data);
             }
       })
 }
-   
-
-const initializeTable = (dbResponse) => {
-      console.log("initialize table hit", dbResponse)
-   
-
-}
-
-getScores(); //~~~~~This will be nested eventually, just not rn for testing
+getScores();
