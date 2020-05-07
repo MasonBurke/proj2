@@ -20,19 +20,6 @@ module.exports = function(app) {
             });
     });
 
-    //This gets just one score from the db (if we wanted to include extra stats onclick of the scoreboard block)
-    // app.get("/api/scores/:category", function(req,res) {
-    //     db.Session.findOne({//~~~~~~~~~~~~~
-    //         where: {
-    //             id: req.params.id
-    //         },
-    //         include: [db.NewScore]//~~~~~~~~~~~~~~
-            
-    //     }).then(function(dbScores) {
-    //         res.json(dbScores);
-    //     });
-    // });
-
     //This adds the scores to the database tables
     app.post("/api/scores", function(req,res) {
         db.Session.create(req.body).then(function(dbScores) {
