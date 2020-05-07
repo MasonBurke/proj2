@@ -124,10 +124,10 @@ function firstScienceQuestion() {
       startBtn.hide();
       
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q1 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q2 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q3 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       
@@ -150,7 +150,7 @@ function firstScienceQuestion() {
                   $(".answerList").empty();
                   secondScienceQuestion();
             })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             secondScienceQuestion();
@@ -162,10 +162,10 @@ function secondScienceQuestion() {
 
 
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
    
       
@@ -187,7 +187,7 @@ function secondScienceQuestion() {
             $(".answerList").empty();
             thirdScienceQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             thirdScienceQuestion();
@@ -195,10 +195,10 @@ function secondScienceQuestion() {
 
   function thirdScienceQuestion() {
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
    
       
@@ -220,7 +220,7 @@ function secondScienceQuestion() {
             $(".answerList").empty();
             fourthScienceQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             fourthScienceQuestion();
@@ -229,10 +229,10 @@ function secondScienceQuestion() {
 
     function fourthScienceQuestion() {
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       divQuestion.text(scienceQuestions.questions.q4);
       divAnswer1.text(scienceQuestions.answers.q4[0]);
@@ -326,10 +326,10 @@ function cultureQuiz (){
       startBtn.hide();
       
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       
@@ -351,7 +351,7 @@ function cultureQuiz (){
             $(".answerList").empty();
             secondCultureQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             secondCultureQuestion();
@@ -361,10 +361,10 @@ function cultureQuiz (){
    function secondCultureQuestion() {
 
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       divQuestion.text(cultureQuestions.questions.q2);
@@ -385,7 +385,7 @@ function cultureQuiz (){
             $(".answerList").empty();
             thirdCultureQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             thirdCultureQuestion();
@@ -395,10 +395,10 @@ function cultureQuiz (){
 
    function thirdCultureQuestion() {
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       divQuestion.text(cultureQuestions.questions.q3);
@@ -419,7 +419,7 @@ function cultureQuiz (){
             $(".answerList").empty();
             fourthCultureQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             fourthCultureQuestion();
@@ -430,10 +430,10 @@ function cultureQuiz (){
    function fourthCultureQuestion() {
 
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       divQuestion.text(cultureQuestions.questions.q4);
@@ -525,10 +525,10 @@ function artQuiz() {
       startBtn.hide();
       
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       
@@ -550,7 +550,7 @@ function artQuiz() {
             $(".answerList").empty();
             secondArtQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             secondArtQuestion();
@@ -559,10 +559,10 @@ function artQuiz() {
 }
 function secondArtQuestion() {
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       
@@ -584,7 +584,7 @@ function secondArtQuestion() {
             $(".answerList").empty();
             thirdArtQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             thirdArtQuestion();
@@ -594,10 +594,10 @@ function secondArtQuestion() {
 
   function thirdArtQuestion() {
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       
@@ -619,7 +619,7 @@ function secondArtQuestion() {
             $(".answerList").empty();
             fourthArtQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             fourthArtQuestion();
@@ -629,10 +629,10 @@ function secondArtQuestion() {
 
   function fourthArtQuestion() {
       var divQuestion = $("<h3>");
-      var divAnswer1 = $("<button>");
-      var divAnswer2 = $("<button>");
-      var divAnswer3 = $("<button>");
-      var divAnswer4 = $("<button>");
+      var divAnswer1 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer2 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer3 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
+      var divAnswer4 = $("<a class='btn btn-secondary btn-lg btn-block q4 button' role='button'>");
       
       
       
