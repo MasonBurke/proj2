@@ -16,12 +16,12 @@ module.exports = function (sequelize, DataTypes) {
         quizCategory:
         {
             type: DataTypes.STRING,
-            allowNull: false
+            defaultValue: "defaultString"
         },
         score:
         {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            
             defaultValue: 0
         }
     })
