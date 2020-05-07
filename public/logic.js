@@ -725,6 +725,56 @@ const getScores = () => {
                   console.log(data)
                   //call the put into a table function
                   //initializeTable or something
+                  initializeTable(data);
             }
       })
 }
+
+const initializeTable = (dbResponse) => {
+      console.log("initialize table hit", dbResponse)
+      //have an empty array
+      //.push into that array the max one
+      //have it loop through that array and put it into the html on the page
+
+
+      
+
+
+
+      // isBigger(dbResponse)
+      
+
+}
+
+// const compare = (a,b) => {
+//       const scoreA = a.score
+//       const scoreB = b.score
+
+//       let comparison = 0;
+//       if (scoreA > scoreB) {
+//             comparison = 1;
+//       } else if (scoreA < scoreB) {
+//             comparison = -1
+//       }
+//       return comparison
+// } ////////////////////////////////////////////////compare function, idk if I'll need this anymore
+
+const isBigger = (array) => {
+      var tempCurrentHigh = {score: 0};
+      topDown = [{score: 5}];
+      console.log(array)
+     
+      for(i=0; i<array.length; i++) {
+            if(tempCurrentHigh.score < array[i].score){
+                  tempCurrentHigh = array[i].score
+                  
+            } else {
+                  console.log("oop")
+            }
+      }
+      console.log(tempCurrentHigh)
+
+
+}
+
+getScores(); //~~~~~This will be nested eventually, just not rn for testing
