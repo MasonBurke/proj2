@@ -4,7 +4,7 @@
 
 var newSession = {
       userName: "",
-      category: "",
+      quizCategory: "",
       score: 0 
 
 }
@@ -13,7 +13,7 @@ var categorySelected = $("#categorySelected");
 var userNameInput = $("#userNameInput");
 var labelEl = $("label");
 var startBtn = $("#startQuiz");
-const topBanner = $(".display-4");
+var topBanner = $(".display-4");
 
 
 
@@ -41,7 +41,7 @@ var cultureQuestions = {
             q1: 'Which continent is the most linguistically diverse?',
             q2: 'How much pizza do Americans eat on average each Day?',
             q3: 'How many countries exist around the world?',
-            q4: 'Which compound expands as it gets colder?',
+            q4: 'How many annual holidays does the U.S Federal Government ',
           },
       answers: {
             q1: ['North America', 'South America', 'Asia', 'Africa'], 
@@ -49,19 +49,39 @@ var cultureQuestions = {
             q2: ['100 Acres', '4,000lbs', '12,000 pizzas', '320 Tons'],
             // correct 1
             q3: ['223', '414', '117', '195'],
-            q4: ['Sulfer Dioxide', 'Carbon Monoxide', ' Muratic Acid', 'Dihydrogen Monoxide'],
+            q4: ['13', '22', '39', '10']
+          }
+
+}
+var artQuestions = {
+    
+      questions: {
+            q1: 'Which famous painter cut off his ear?',
+            q2: 'What type of colors are Blue and Yellow?',
+            q3: 'Which of the following is considered one of the main 4 Renaissance Artists?',
+            q4: 'What artist was struck in the face with a mallet by an envious rival, disfiguring him for life?',
+          },
+      answers: {
+            q1: ['Van Gogh', 'Monet', 'Picasso', 'Michelangelo'], 
+           
+            q2: ['Primary', 'Secondary', 'Both Primary & Secondary', 'Neither Primary nor Secondary'],
+            
+            q3: ['Caravaggio', 'Giotto', 'Titian', 'Donatello'],
+
+            q4: ['Van Gogh', 'Monet', 'Picasso', 'Michelangelo']
           }
 
 }
 
+// ------------------------- FUNCTIONS AND CLICK EVENTS BELOW---------------------------------------
 
 
 $("#startQuiz").on("click", function() {
             newSession.userName = userNameInput.val();
-            newSession.category = categorySelected.val();
+            newSession.quizCategory = categorySelected.val();
             console.log(newSession.userName);
-            console.log(newSession.category);
-            startQuiz(newSession.category);
+            console.log(newSession.quizCategory);
+            startQuiz(newSession.quizCategory);
             
       })
 
@@ -71,22 +91,24 @@ function startQuiz (category) {
       
       
       if (category === "Science") {
-           
             scienceQuiz ();
 
       }
       else if (category === "Culture") {
             cultureQuiz();
       }
+      else if (category === "Art") {
+            artQuiz();
+      }
 
 }
 
 function scienceQuiz (){
       topBanner.empty();
-      topBanner.text(newSession.category + " Time!!")
+      topBanner.text(newSession.quizCategory + " Time!!")
 
       firstScienceQuestion();
-      console.log(newSession.category);
+      console.log(newSession.quizCategory);
 
 
 
@@ -234,13 +256,14 @@ function secondScienceQuestion() {
                 }).then(
                   function() {
                     console.log("created new quizSession");
+                    location.reload();
                     // Reload the page to get the updated list
                     
-                  }
-                );
+                  });
             
-      })
-      $("button").on("click", function () {
+      });
+
+      divAnswer1.on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             $.ajax("/api/scores", {
@@ -250,20 +273,47 @@ function secondScienceQuestion() {
                   function() {
                     console.log("created new quizSession");
                     // Reload the page to get the updated list
-                    
-                  }
-                );
+                    location.reload();
+                  });
+      });
+      divAnswer2.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                      }).then(
+                   function() {
+                        console.log("created new quizSession");
+                          // Reload the page to get the updated list
+                          location.reload();
+                        }
+                      );
             
-      }) 
+      }); 
+      divAnswer3.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    console.log("created new quizSession");
+                    // Reload the page to get the updated list
+                    location.reload();
+                  });
           
-    }
+      });
         
   }
+}
+
 }
 }
 function cultureQuiz (){
       topBanner.empty();
-      topBanner.text(newSession.category + " Time!!")
+      topBanner.text(newSession.quizCategory + " Time!!")
 
       firstCultureQuestion();
 
@@ -386,11 +436,176 @@ function cultureQuiz (){
       var divAnswer4 = $("<button>");
       
       
-      divQuestion.text(cultureQuestions.questions.q3);
-      divAnswer1.text(cultureQuestions.answers.q3[0]);
-      divAnswer2.text(cultureQuestions.answers.q3[1]);
-      divAnswer3.text(cultureQuestions.answers.q3[2]);
-      divAnswer4.text(cultureQuestions.answers.q3[3]);
+      divQuestion.text(cultureQuestions.questions.q4);
+      divAnswer1.text(cultureQuestions.answers.q4[0]);
+      divAnswer2.text(cultureQuestions.answers.q4[1]);
+      divAnswer3.text(cultureQuestions.answers.q4[2]);
+      divAnswer4.text(cultureQuestions.answers.q4[3]);
+
+      $(".content").append(divQuestion);
+      $(".answerList").append(divAnswer1);
+      $(".answerList").append(divAnswer2);
+      $(".answerList").append(divAnswer3);
+      $(".answerList").append(divAnswer4);
+
+      divAnswer4.on("click", function () {
+            newSession.score = newSession.score + 100;
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    console.log("passed through data of newSession", newSession)
+                    location.reload();
+                  }
+                );
+            $(".content").empty();
+            $(".answerList").empty();
+            
+      })
+      divAnswer1.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    console.log("created new quizSession");
+                    // Reload the page to get the updated list
+                    location.reload();
+                  });
+      });
+      divAnswer2.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                      }).then(
+                   function() {
+                        console.log("created new quizSession");
+                          // Reload the page to get the updated list
+                          location.reload();
+                        }
+                      );
+            
+      }); 
+      divAnswer3.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    console.log("created new quizSession");
+                    // Reload the page to get the updated list
+                    location.reload();
+                  });
+          
+      });
+         
+   }
+
+      
+}
+function artQuiz() {
+      topBanner.empty();
+      topBanner.text(newSession.quizCategory + " Time!!")
+
+      firstArtQuestion();
+
+
+   function firstArtQuestion() {
+         
+      userNameInput.hide();
+      categorySelected.hide();
+      labelEl.hide();
+      startBtn.hide();
+      
+      var divQuestion = $("<h3>");
+      var divAnswer1 = $("<button>");
+      var divAnswer2 = $("<button>");
+      var divAnswer3 = $("<button>");
+      var divAnswer4 = $("<button>");
+      
+      
+      
+      divQuestion.text(artQuestions.questions.q1);
+      divAnswer1.text(artQuestions.answers.q1[0]);
+      divAnswer2.text(artQuestions.answers.q1[1]);
+      divAnswer3.text(artQuestions.answers.q1[2]);
+      divAnswer4.text(artQuestions.answers.q1[3]);
+
+      $(".content").append(divQuestion);
+      $(".answerList").append(divAnswer1);
+      $(".answerList").append(divAnswer2);
+      $(".answerList").append(divAnswer3);
+      $(".answerList").append(divAnswer4);
+
+      divAnswer1.on("click", function () {
+            newSession.score = newSession.score + 100;
+            $(".content").empty();
+            $(".answerList").empty();
+            secondArtQuestion();
+      })
+      $("button").on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            secondArtQuestion();
+      }) 
+      
+}
+function secondArtQuestion() {
+      var divQuestion = $("<h3>");
+      var divAnswer1 = $("<button>");
+      var divAnswer2 = $("<button>");
+      var divAnswer3 = $("<button>");
+      var divAnswer4 = $("<button>");
+      
+      
+      
+      divQuestion.text(artQuestions.questions.q2);
+      divAnswer1.text(artQuestions.answers.q2[0]);
+      divAnswer2.text(artQuestions.answers.q2[1]);
+      divAnswer3.text(artQuestions.answers.q2[2]);
+      divAnswer4.text(artQuestions.answers.q2[3]);
+
+      $(".content").append(divQuestion);
+      $(".answerList").append(divAnswer1);
+      $(".answerList").append(divAnswer2);
+      $(".answerList").append(divAnswer3);
+      $(".answerList").append(divAnswer4);
+
+      divAnswer1.on("click", function () {
+            newSession.score = newSession.score + 100;
+            $(".content").empty();
+            $(".answerList").empty();
+            thirdArtQuestion();
+      })
+      $("button").on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            thirdArtQuestion();
+      }) 
+
+      }
+
+  function thirdArtQuestion() {
+      var divQuestion = $("<h3>");
+      var divAnswer1 = $("<button>");
+      var divAnswer2 = $("<button>");
+      var divAnswer3 = $("<button>");
+      var divAnswer4 = $("<button>");
+      
+      
+      
+      divQuestion.text(artQuestions.questions.q3);
+      divAnswer1.text(artQuestions.answers.q3[0]);
+      divAnswer2.text(artQuestions.answers.q3[1]);
+      divAnswer3.text(artQuestions.answers.q3[2]);
+      divAnswer4.text(artQuestions.answers.q3[3]);
 
       $(".content").append(divQuestion);
       $(".answerList").append(divAnswer1);
@@ -402,33 +617,88 @@ function cultureQuiz (){
             newSession.score = newSession.score + 100;
             $(".content").empty();
             $(".answerList").empty();
-            
+            fourthArtQuestion();
       })
       $("button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
-           
+            fourthArtQuestion();
       }) 
-         
-   }
+        
+  }
 
+  function fourthArtQuestion() {
+      var divQuestion = $("<h3>");
+      var divAnswer1 = $("<button>");
+      var divAnswer2 = $("<button>");
+      var divAnswer3 = $("<button>");
+      var divAnswer4 = $("<button>");
       
-}
+      
+      
+      divQuestion.text(artQuestions.questions.q4);
+      divAnswer1.text(artQuestions.answers.q4[0]);
+      divAnswer2.text(artQuestions.answers.q4[1]);
+      divAnswer3.text(artQuestions.answers.q4[2]);
+      divAnswer4.text(artQuestions.answers.q4[3]);
 
+      $(".content").append(divQuestion);
+      $(".answerList").append(divAnswer1);
+      $(".answerList").append(divAnswer2);
+      $(".answerList").append(divAnswer3);
+      $(".answerList").append(divAnswer4);
 
-function postSession(data) {
-      $.post("/api/scores", data).then(getScores);
-      
-}
-function getScores() {
-      
-      $.get("/api/scores", function (data) {
-            var scores = [];
-            for (var i = 0; i < data.length; i++){
-            scores.push(data[i]);
-      
-            }
-            console.log(scores);
-            
+      divAnswer4.on("click", function () {
+            newSession.score = newSession.score + 100;
+            $(".content").empty();
+            $(".answerList").empty();
+            location.reload();
       })
+      divAnswer1.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    console.log("created new quizSession");
+                    // Reload the page to get the updated list
+                    location.reload();
+                  });
+      });
+      divAnswer2.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                      }).then(
+                   function() {
+                        console.log("created new quizSession");
+                          // Reload the page to get the updated list
+                          location.reload();
+                        }
+                      );
+            
+      }); 
+      divAnswer3.on("click", function () {
+            $(".content").empty();
+            $(".answerList").empty();
+            $.ajax("/api/scores", {
+                  type: "POST",
+                  data: newSession
+                }).then(
+                  function() {
+                    console.log("created new quizSession");
+                    // Reload the page to get the updated list
+                    location.reload();
+                  });
+          
+      });
+        
+  }
 }
+
+
+console.log(newSession.score);
