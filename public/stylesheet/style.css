@@ -1,7 +1,33 @@
 .jumbotron {
-    text-align: center;
+  text-align: center;
 }
 
 .scroll {
-   margin: 0 auto;
+  margin: 0 auto;
+}
+
+.score {
+  text-align: center;
+}
+
+h1 {
+  font-family: cursive;
+}
+
+h3 {
+  font-family: monospace;
+}
+
+.lead {
+  font-family: "Courier New", monospace;
+}
+
+a.button:hover {
+  color: white;
+  background-color: green;
+}
+
+.scroll {
+  background-color: rgba(165, 162, 162, 0.247);
+  border-radius: 15%;
 }
