@@ -351,7 +351,7 @@ function cultureQuiz (){
             $(".answerList").empty();
             secondCultureQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             secondCultureQuestion();
@@ -385,7 +385,7 @@ function cultureQuiz (){
             $(".answerList").empty();
             thirdCultureQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             thirdCultureQuestion();
@@ -419,7 +419,7 @@ function cultureQuiz (){
             $(".answerList").empty();
             fourthCultureQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             fourthCultureQuestion();
@@ -550,7 +550,7 @@ function artQuiz() {
             $(".answerList").empty();
             secondArtQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             secondArtQuestion();
@@ -584,7 +584,7 @@ function secondArtQuestion() {
             $(".answerList").empty();
             thirdArtQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             thirdArtQuestion();
@@ -619,7 +619,7 @@ function secondArtQuestion() {
             $(".answerList").empty();
             fourthArtQuestion();
       })
-      $("button").on("click", function () {
+      $(".button").on("click", function () {
             $(".content").empty();
             $(".answerList").empty();
             fourthArtQuestion();
