@@ -702,3 +702,59 @@ function secondArtQuestion() {
 
 
 console.log(newSession.score);
+
+
+const getScores = () => {
+
+
+      $.get("/api/scores" , function(data) {
+            console.log("Scores:", data);
+            if(!data || !data.length) {
+                  console.log("There's no scores or no information in the scores")
+                  //call a function that puts a message saying that nobody has played yet
+                  //initializeEmpty or something
+            } else {
+                  console.log(data)
+                  //call the put into a table function
+                  //initializeTable or something
+
+
+
+
+                  /// have something here to narrow the search response (science, art,culture)
+                  //then send that data through initializeTable
+
+                  //create new function for getScience/Art/Culture
+                  initializeTable(data);
+            }
+      })
+}
+
+const getScience = () => {
+      
+}
+const getArt = () => {
+      
+}
+const getCulture = () => {
+      
+}
+
+const initializeTable = (dbResponse) => {
+      console.log("initialize table hit", dbResponse)
+      //have an empty array
+      //.push into that array the max one
+      //have it loop through that array and put it into the html on the page
+
+
+      //dbresponse = the array of info to add
+      //have a for loop to loop through that and push to the page
+      //
+      
+
+
+     
+
+}
+
+getScores(); //~~~~~This will be nested eventually, just not rn for testing
