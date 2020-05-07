@@ -702,3 +702,29 @@ function secondArtQuestion() {
 
 
 console.log(newSession.score);
+
+
+
+
+//       userName: "",
+//       quizCategory: "",
+//       score: 0 
+
+
+
+const getScores = () => {
+
+
+      $.get("/api/scores" , function(data) {
+            console.log("Scores:", data);
+            if(!data || !data.length) {
+                  console.log("There's no scores or no information in the scores")
+                  //call a function that puts a message saying that nobody has played yet
+                  //initializeEmpty or something
+            } else {
+                  console.log(data)
+                  //call the put into a table function
+                  //initializeTable or something
+            }
+      })
+}
