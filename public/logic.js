@@ -704,14 +704,6 @@ function secondArtQuestion() {
 console.log(newSession.score);
 
 
-
-
-//       userName: "",
-//       quizCategory: "",
-//       score: 0 
-
-
-
 const getScores = () => {
 
 
@@ -725,9 +717,27 @@ const getScores = () => {
                   console.log(data)
                   //call the put into a table function
                   //initializeTable or something
+
+
+
+
+                  /// have something here to narrow the search response (science, art,culture)
+                  //then send that data through initializeTable
+
+                  //create new function for getScience/Art/Culture
                   initializeTable(data);
             }
       })
+}
+
+const getScience = () => {
+      
+}
+const getArt = () => {
+      
+}
+const getCulture = () => {
+      
 }
 
 const initializeTable = (dbResponse) => {
@@ -737,43 +747,13 @@ const initializeTable = (dbResponse) => {
       //have it loop through that array and put it into the html on the page
 
 
+      //dbresponse = the array of info to add
+      //have a for loop to loop through that and push to the page
+      //
       
 
 
-
-      // isBigger(dbResponse)
-      
-
-}
-
-// const compare = (a,b) => {
-//       const scoreA = a.score
-//       const scoreB = b.score
-
-//       let comparison = 0;
-//       if (scoreA > scoreB) {
-//             comparison = 1;
-//       } else if (scoreA < scoreB) {
-//             comparison = -1
-//       }
-//       return comparison
-// } ////////////////////////////////////////////////compare function, idk if I'll need this anymore
-
-const isBigger = (array) => {
-      var tempCurrentHigh = {score: 0};
-      topDown = [{score: 5}];
-      console.log(array)
      
-      for(i=0; i<array.length; i++) {
-            if(tempCurrentHigh.score < array[i].score){
-                  tempCurrentHigh = array[i].score
-                  
-            } else {
-                  console.log("oop")
-            }
-      }
-      console.log(tempCurrentHigh)
-
 
 }
 
