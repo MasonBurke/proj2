@@ -14,6 +14,8 @@ var userNameInput = $("#userNameInput");
 var labelEl = $("label");
 var startBtn = $("#startQuiz");
 var topBanner = $(".display-4");
+var scoreBanner = $(".score")
+var sessionScore = newSession.score
 
 
 
@@ -106,6 +108,7 @@ function startQuiz (category) {
 function scienceQuiz (){
       topBanner.empty();
       topBanner.text(newSession.quizCategory + " Time!!")
+      scoreBanner.text("Current Score: " + sessionScore);
 
       firstScienceQuestion();
       console.log(newSession.quizCategory);
@@ -159,6 +162,8 @@ function firstScienceQuestion() {
       
 
 function secondScienceQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
 
 
       var divQuestion = $("<h3>");
@@ -194,6 +199,9 @@ function secondScienceQuestion() {
       }) 
 
   function thirdScienceQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
+
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
       var divAnswer2 = $("<button>");
@@ -228,6 +236,9 @@ function secondScienceQuestion() {
 
 
     function fourthScienceQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
+
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
       var divAnswer2 = $("<button>");
@@ -319,6 +330,8 @@ function cultureQuiz (){
 
 
    function firstCultureQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
          
       userNameInput.hide();
       categorySelected.hide();
@@ -359,6 +372,8 @@ function cultureQuiz (){
    }
 
    function secondCultureQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
 
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
@@ -394,6 +409,8 @@ function cultureQuiz (){
    }
 
    function thirdCultureQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
       var divAnswer2 = $("<button>");
@@ -427,7 +444,9 @@ function cultureQuiz (){
          
    }
 
-   function fourthCultureQuestion() {
+   function fourthCultureQuestion() { 
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
 
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
@@ -518,6 +537,8 @@ function artQuiz() {
 
 
    function firstArtQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
          
       userNameInput.hide();
       categorySelected.hide();
@@ -558,6 +579,9 @@ function artQuiz() {
       
 }
 function secondArtQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
+
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
       var divAnswer2 = $("<button>");
@@ -593,6 +617,9 @@ function secondArtQuestion() {
       }
 
   function thirdArtQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
+
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
       var divAnswer2 = $("<button>");
@@ -628,6 +655,9 @@ function secondArtQuestion() {
   }
 
   function fourthArtQuestion() {
+      var sessionScore = newSession.score
+      scoreBanner.text("Current Score: " + sessionScore);
+
       var divQuestion = $("<h3>");
       var divAnswer1 = $("<button>");
       var divAnswer2 = $("<button>");
@@ -652,6 +682,7 @@ function secondArtQuestion() {
             newSession.score = newSession.score + 100;
             $(".content").empty();
             $(".answerList").empty();
+
             location.reload();
       })
       divAnswer1.on("click", function () {
