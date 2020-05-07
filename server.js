@@ -23,8 +23,7 @@ var routes = require("./controllers/questions_controller");
 
 app.use(routes);
 
-
-
+require("./routes/score-api-routes")(app);
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
