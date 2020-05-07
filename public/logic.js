@@ -267,7 +267,7 @@ function secondScienceQuestion() {
                 }).then(
                   function() {
                     
-                    location.reload();
+                   window.location.replace("/highscores");
                     // Reload the page to get the updated list
                     
                   });
@@ -284,7 +284,7 @@ function secondScienceQuestion() {
                   function() {
                     
                     // Reload the page to get the updated list
-                    location.reload();
+                    window.location.replace("/highscores");
                   });
       });
       divAnswer2.on("click", function () {
@@ -297,7 +297,7 @@ function secondScienceQuestion() {
                    function() {
                         
                           // Reload the page to get the updated list
-                          location.reload();
+                          window.location.replace("/highscores");
                         }
                       );
             
@@ -312,7 +312,7 @@ function secondScienceQuestion() {
                   function() {
                     
                     // Reload the page to get the updated list
-                    location.reload();
+                    window.location.replace("/highscores");
                   });
           
       });
@@ -475,7 +475,7 @@ function cultureQuiz (){
                 }).then(
                   function() {
                     console.log("passed through data of newSession", newSession)
-                    location.reload();
+                    window.location.replace("/highscores");
                   }
                 );
             $(".content").empty();
@@ -492,7 +492,7 @@ function cultureQuiz (){
                   function() {
                     
                     // Reload the page to get the updated list
-                    location.reload();
+                    window.location.replace("/highscores");
                   });
       });
       divAnswer2.on("click", function () {
@@ -505,7 +505,7 @@ function cultureQuiz (){
                    function() {
                         
                           // Reload the page to get the updated list
-                          location.reload();
+                          window.location.replace("/highscores");
                         }
                       );
             
@@ -520,7 +520,7 @@ function cultureQuiz (){
                   function() {
                     
                     // Reload the page to get the updated list
-                    location.reload();
+                   
                   });
           
       });
@@ -689,7 +689,7 @@ function secondArtQuestion() {
                 }).then(
                   function() {
                     // Reload the page to get the updated list
-                    location.reload()
+                    location()
                   });
 
 
@@ -706,7 +706,7 @@ function secondArtQuestion() {
                   function() {
                     
                     // Reload the page to get the updated list
-                    location.reload();
+                    window.location.replace("/highscores");
                   });
       });
       divAnswer2.on("click", function () {
@@ -719,7 +719,7 @@ function secondArtQuestion() {
                    function() {
                         
                           // Reload the page to get the updated list
-                          location.reload();
+                          window.location.replace("/highscores");
                         }
                       );
             
@@ -734,7 +734,7 @@ function secondArtQuestion() {
                   function() {
                     
                     // Reload the page to get the updated list
-                    location.reload();
+                    window.location.replace("/highscores");
                   });
           
       });
