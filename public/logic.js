@@ -702,3 +702,49 @@ function secondArtQuestion() {
 
 
 console.log(newSession.score);
+
+
+const getScores = () => {
+
+
+      $.get("/api/scores" , function(data) {
+            console.log("Scores:", data);
+            if(!data) {
+                  console.log("There's no scores or no information in the scores")
+                  //call a function that puts a message saying that nobody has played yet
+                  //initializeEmpty or something
+            } else {
+                  console.log(data)
+                  //call the put into a table function
+                  //initializeTable or something
+
+                  const {art,science,culture} = data;
+                  for (const score of science) {
+                        console.log(score.score)
+                        $("#scienceScore").append(`<p>name: ${score.userName} | Score: ${score.score} | Date: ${score.createdAt}</p>`)
+                  }
+                  for (const score of art) {
+                        $("#artScore").append(`<p>name: ${score.userName} | Score: ${score.score} | Date: ${score.createdAt}</p>`)
+                  }
+                  for (const score of culture) {
+                        $("#cultureScore").append(`<p>name: ${score.userName} | Score: ${score.score} | Date: ${score.createdAt}</p>`)
+                  }
+
+
+                  /// have something here to narrow the search response (science, art,culture)
+                  //then send that data through initializeTable
+
+                  //create new function for getScience/Art/Culture
+                  initializeTable(data);
+            }
+      })
+}
+   
+
+const initializeTable = (dbResponse) => {
+      console.log("initialize table hit", dbResponse)
+   
+
+}
+
+getScores(); //~~~~~This will be nested eventually, just not rn for testing
