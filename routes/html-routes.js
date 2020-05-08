@@ -5,13 +5,13 @@ module.exports = function(app) {
         res.render("index");
     });
 
-    app.get("/questions", function(app) {
-        res.sendFile(path.join(__dirname, "../public/questions.html"))
-    });
+    // app.get("/questions", function(app) {
+    //     res.sendFile(path.join(__dirname, "../public/questions.html"))
+    // });
 
-    app.get("/highscores", function(app) {
-        res.sendFile(path.join(__dirname, "/public/highscores.html"))
-    })
+    // app.get("/highscores", function(app) {
+    //     res.sendFile(path.join(__dirname, "/public/highscores.html"))
+    // })
 
     //index.html
     //questions.html
